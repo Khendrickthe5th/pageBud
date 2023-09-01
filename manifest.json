@@ -1,0 +1,19 @@
+{"manifest_version": 3,
+"version": "1.0",
+"name": "PageBud",
+"description": "My First Chrome Extension",
+"permissions": ["webNavigation", "activeTab", "contextMenus", "scripting", "tabs", "pageCapture"],
+"host_permissions": ["<all_urls>"],
+"content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["main.js", "miniNotesPanel.js"],
+    "css": ["main.css", "miniNotesPanel.css"]
+}],
+"action": {
+    "default_popup": "popUp.html"
+},
+"background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+}
+}
